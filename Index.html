@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar System Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #282c34;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #61dafb;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #21a1f1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Solar System Fact</h1>
+        <p id="fact"></p>
+        <button id="factButton">Show Another Fact</button>
+    </div>
+    <script>
+        const facts = [
+            "The Sun contains about 99.86% of the total mass of the solar system.",
+            "There are eight recognized planets in the solar system.",
+            "Pluto was reclassified as a dwarf planet in 2006.",
+            "The solar system is divided into terrestrial planets and gas giants.",
+            "Between Mars and Jupiter lies the asteroid belt.",
+            "Beyond Neptune, the Kuiper Belt is filled with icy bodies.",
+            "The Oort Cloud is believed to surround the solar system.",
+            "Jupiter has the most moons of any planet in the solar system.",
+            "Mercury experiences extreme temperature fluctuations.",
+            "It takes light approximately 8 minutes and 20 seconds to travel from the Sun to Earth."
+        ];
+
+        const factElement = document.getElementById('fact');
+        const button = document.getElementById('factButton');
+
+        button.addEventListener('click', () => {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            factElement.textContent = facts[randomIndex];
+        });
+    </script>
+</body>
+</html>
